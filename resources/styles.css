@@ -1,0 +1,495 @@
+/* --- universal styles --- */
+html {
+    font-size: 16px;
+    background-color: slateblue;
+    font-family: 'Quantico', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*text within cards reduces size to avoid overflow*/
+@media only screen and (max-width: 800px) {
+    p {
+        font-size: 12px;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Mirza', cursive;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+/*text within cards reduces size to avoid overflow*/
+@media only screen and (max-width: 960px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/*fixes text overflow within cards*/
+@media only screen and (max-width: 620px) {
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+a {
+    color: black;
+    margin: 4px;
+}
+
+
+a:hover {
+    color: gold;
+    background-color: black;
+}
+
+a:active {
+    color: slateblue;
+    background-color: black;
+    text-decoration: none;
+    opacity: 1;
+}
+
+/*
+MISC STYLING NOTES:
+
+fonts notes: 
+mirza for headers or titles
+quantico for text blocks and all else
+
+breakpoints:
+laptops or small desktops: 1430px
+tablets: 960px
+product cards: 800px 
+footer contact info: 620px
+phones: 427px
+*/
+
+
+/* --- header styling --- */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 20rem;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+    border-bottom: 4px solid gold;
+    background-image: url(../resources/images/banners_and_backgrounds/pier_banner.jpg);
+    background-size: cover;
+    background-position: center 64%;
+}
+
+header section#splash-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+header section#splash-logo h1 {
+    font-size: 5rem;
+}
+
+/*stops title from dropping to two lines*/
+@media only screen and (max-width:  1430px) {
+    header section#splash-logo h1 {
+        font-size: 3rem;
+    }
+}
+
+/*completely drop page title from header*/
+/*reduce height of header to account for missing page title*/
+@media only screen and (max-width: 960px) {
+    header {
+        height: 10rem;
+    }
+
+    header section#splash-logo {
+        display: none;
+    }
+}
+
+/*further reduces height of header*/
+@media only screen and (max-width: 427px) {
+    header {
+        height: 7rem;
+    }
+}
+
+
+/* --- navbar styling --- */
+
+header ul {
+    list-style: none;  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+header li a {
+    font-family: 'Mirza', cursive;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    background-color: gold;
+    opacity: 0.75;
+}
+
+nav a img {
+    height: 2.25rem;
+    width: auto;
+    margin-left: 1rem;
+    padding: 0.25rem;
+    background-color: gold;
+}
+
+/*fixes header links from sliding under header*/
+@media only screen and (max-width: 1430px) {
+    header li a {
+        font-size: 1.75rem;
+        padding: 1rem;
+    }
+
+    nav a img {
+        height: 2rem;
+        margin-left: 0.8rem;
+    }
+}
+
+/*makes header link buttons icons only*/
+@media only screen and (max-width: 960px) {
+    header ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a span {
+        display: none;
+    }
+
+    header li a {
+        padding: 0.75rem;
+    }
+
+    nav a img {
+        margin: 1rem 1rem 0 1rem;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 427px) {
+    nav ul li {
+        margin: 0.08rem;
+    }
+    nav a img {
+        height: 1.25rem; 
+    }
+}
+
+/* --- main body styling --- */
+
+main {
+    width: 90%;
+    margin: 25rem 5% 5rem 5%;
+
+}
+
+/*reduces page margins*/
+@media only screen and (max-width: 960px) {
+    main {
+        margin: 15rem 5% 4rem 5%;
+    }
+}
+
+/*reduces page margins*/
+@media only screen and (max-width: 427px) {
+    main {
+        width: 98%;
+        margin: 12rem 1% 3rem 1%;
+    }
+}
+
+/* --- banners within main --- */
+
+figure h2 {
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+
+#mission-banner {
+    height: 12rem;
+    background-image: url(../resources/images/banners_and_backgrounds/mission_banner.jpg);
+    background-size: cover;
+    background-position: center 30%;
+}
+
+
+#lesson-banner {
+    height: 12rem;
+    background-image: url(../resources/images/banners_and_backgrounds/lessons_banner.jpg);
+    background-size: cover;
+    background-position: center 30%;
+}
+
+#menu-banner {
+    height: 12rem;
+    background-image: url(../resources/images/banners_and_backgrounds/menu_banner.jpg);
+    background-size: cover;
+    background-position: center 66%;
+}
+
+#team-banner {
+    height: 12rem;
+    background-image: url(../resources/images/banners_and_backgrounds/team_banner.jpg);
+    background-size: cover;
+    background-position: center 66%;
+}
+
+/*reduces section banner heights*/
+@media only screen and (max-width: 427px) {
+    #mission-banner {
+        height: 6rem;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+
+    #lesson-banner {
+        height: 6rem;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+
+    #menu-banner {
+        height: 6rem;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }
+
+    #team-banner {
+        height: 6rem;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+        background-position: center 50%;
+    }
+}
+
+/* --- main articles --- */
+
+/* --- mission statement --- */
+
+#mission-container {
+    background-color: gold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+
+#mission-container p {
+    padding: 0.5rem 1rem;
+}
+
+/* --- krav maga lessons section --- */
+
+#lessons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+figure.lesson-container {
+    height: 25rem;
+    width: 12%;
+    background-color: gold;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+figure.lesson-container img {
+    max-height: 60%;
+    max-width: 100%;
+    margin: 0.1rem;
+}
+
+figure.lesson-container h3, figure.lesson-container p {
+    margin: 0;
+    padding: 0;
+}
+
+/*makes cards less tall and wider*/
+/*reduces space (margin) between cards*/
+@media only screen and (max-width: 960px) {
+    figure.lesson-container {
+        height: 15rem;
+        width: 25%;
+        margin: 0.5rem;
+    }
+
+    figure.lesson-container img {
+        max-height: 45%;
+    }
+}
+
+/* --- featured dining menu items --- */
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+figure.menu-container {
+    height: 25rem;
+    width: 12%;
+    background-color: gold;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+figure.menu-container img {
+    max-height: 60%;
+    max-width: 100%;
+    margin: 0.1rem;
+}
+
+figure.menu-container h3, figure.menu-container p {
+    margin: 0;
+    padding: 0;
+}
+
+/*makes cards less tall and wider*/
+/*reduces space (margin) between cards*/
+@media only screen and (max-width: 960px) {
+    figure.menu-container {
+        height: 15rem;
+        width: 25%;
+        margin: 0.5rem;
+    }
+
+    figure.menu-container img {
+        max-height: 45%;
+    }
+}
+
+/* --- team members section --- */
+
+#team {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+figure.team-container {
+    height: 25rem;
+    width: 12%;
+    background-color: gold;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+figure.team-container img {
+    max-height: 60%;
+    max-width: 100%;
+    margin: 0.1rem;
+}
+
+figure.team-container h3, figure.team-container p {
+    margin: 0;
+    padding: 0;
+}
+
+/*makes cards less tall and wider*/
+/*reduces space (margin) between cards*/
+@media only screen and (max-width: 960px) {
+    figure.team-container {
+        height: 15rem;
+        width: 25%;
+        margin: 0.5rem;
+    }
+
+    figure.team-container img {
+        max-height: 45%;
+    }
+}
+
+
+/* --- footer styling --- */
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 4px solid gold;
+    background-image: url(./images/banners_and_backgrounds/footer_banner.jpg);
+    background-size: cover;
+    background-position: center 10%;
+}
+
+footer h3 {
+    background-color: gold;
+    padding: 0.25rem;
+}
+
+footer p {
+    background-color: gold;
+    padding: 0.25rem;
+}
+
+footer div.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*adjusts contact cards to display on seperate lines*/
+@media only screen and (max-width: 620px) {
+    footer div.contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
